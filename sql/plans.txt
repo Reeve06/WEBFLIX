@@ -1,0 +1,22 @@
+--
+-- Table structure for table `movie`
+--
+
+CREATE TABLE IF NOT EXISTS `plans` (
+  `id` int(20) NOT NULL,
+  `plans_title` varchar(30) NOT NULL,
+  `show1` varchar(30) NOT NULL,
+  `info` varchar(500) NOT NULL,
+  `sub_price` decimal(4,2) NOT NULL,
+ `img` varchar(30) NOT NULL 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `movie`
+--
+
+INSERT INTO `plans` (`id`, `plans_title`, `show1`,  `info`,  `sub_price`,`img` ) VALUES
+(1, 'Gold Plan', 'Monthly subscription', 'This plan provides access to stream all the content avaiable.    ',  9.99,'img/gold.jpg' ),
+
+(2, 'Premium Plan', 'Yearly subscription', 'The Annual subscription plan gives access to all streaming content avaiable on this platform.   ',  99.99, 'img/premium.jpg');
+

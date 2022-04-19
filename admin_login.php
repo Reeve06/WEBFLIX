@@ -10,7 +10,7 @@ if ( isset( $errors ) && !empty( $errors ) )
 {
  echo '<h5 id="err_msg">Oops! There was a problem:<br></h5>' ;
  foreach ( $errors as $msg ) { echo " - $msg<br>" ; }
- echo '<h5>Please try again or <a href="register.php">Register</a></h5>' ;
+ echo '<h5>Please try again or <a href="admin_register.php">Register as administrator </a></h5>' ;
 }
 ?>
 <!doctype html>
@@ -39,10 +39,10 @@ if ( isset( $errors ) && !empty( $errors ) )
 <img src="img/cover.jpg" class="img-fluid" style="min-height:100%;" />
 </div>
 <div class="col-md-6 bg-white p-5">
-<h1 class="pb-3">Login </h1>
+<h1 class="pb-3">Administrator Login </h1>
 <div class="form-style">
   
-<form  action="login_action.php" method="post">
+<form  action="adminlogin_action.php" method="post">
    
   <div class="form-group pb-3">   
   
@@ -55,7 +55,6 @@ if ( isset( $errors ) && !empty( $errors ) )
   </div>
   <div class="d-flex align-items-center justify-content-between">
 
-   <!-- <div><a href="#">Forget Password?</a></div>-->
 </div>
    <div class="pb-2">
   <button type="submit" class="btn btn-dark w-100 font-weight-bold mt-2"  value="Login">Submit</button>
@@ -65,7 +64,7 @@ if ( isset( $errors ) && !empty( $errors ) )
   <div class="sideline">OR</div>
  
   <div class="pt-4 text-center">
-  Register to be member. <a href="register.php">Sign Up</a>
+  Register as administrator. <a href="admin_register.php">Sign Up</a>
   </div>
 </div>
 

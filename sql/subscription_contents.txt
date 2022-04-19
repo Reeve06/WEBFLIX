@@ -1,0 +1,13 @@
+--
+-- Table structure for table `subscription_contents`
+--
+
+CREATE TABLE IF NOT EXISTS `subscription_contents` (
+  `content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `subscription_id` int(10) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL,
+  `quantity` int(10) unsigned NOT NULL DEFAULT '1',
+  `sub_price` decimal(4,2) NOT NULL,
+  PRIMARY KEY (`content_id`)
+) ;
+

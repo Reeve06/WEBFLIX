@@ -31,38 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $ln = mysqli_real_escape_string($link, trim($_POST['last_name']));
     }
 
-     # Check for a Date of birth.
-    if (empty($_POST['date_birth']))
-    {
-        $errors[] = 'Enter your date of birth.';
-    }
-    else
-    {
-        $dob = mysqli_real_escape_string($link, trim($_POST['date_birth']));
-    }
-
-    # Check for a Contact Number.
-    if (empty($_POST['contact_number']))
-    {
-        $errors[] = 'Enter your Contact Number.';
-    }
-    else
-    {
-        $contact_no = mysqli_real_escape_string($link, trim($_POST['contact_number']));
-    }
-
-
-    # Check for a Country.
-    if (empty($_POST['country']))
-    {
-        $errors[] = 'Enter your Country.';
-    }
-    else
-    {
-        $count = mysqli_real_escape_string($link, trim($_POST['country']));
-    }
-
-
      # Check for a email.
     if (empty($_POST['email']))
     {
@@ -91,63 +59,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             $errors[] = 'Enter your password.';
      }
 
-    # Check for a card number.
-        if (empty($_POST['card_number']))
-        {
-            $errors[] = 'Enter your Card Number.';
-        }
-        else
-        {
-            $card_no = mysqli_real_escape_string($link, trim($_POST['card_number']));
-        }
-
-        # Check for a card exp month.    
-        if (empty($_POST['exp_month']))
-        {
-            $errors[] = 'Enter your Card Exp Month.';
-        }
-        else
-        {
-            $exp_m = mysqli_real_escape_string($link, trim($_POST['exp_month']));
-        }
-
-        # Check for a card exp year.
-        if (empty($_POST['exp_year']))
-        {
-            $errors[] = 'Enter your Card Exp Year.';
-        }
-        else
-        {
-            $exp_y = mysqli_real_escape_string($link, trim($_POST['exp_year']));
-        }
-
-        # Check for a card cvv.
-        if (empty($_POST['cvv']))
-        {
-            $errors[] = 'Enter your Card CVV.';
-        }
-        else
-        {
-            $cvv = mysqli_real_escape_string($link, trim($_POST['cvv']));
-        }
+   
 
 # Check if email address already registered.
 if ( empty( $errors ) )
 {
-  $q = "SELECT user_id FROM users WHERE email='$email'" ;
+  $q = "SELECT admin_id FROM admin WHERE email='$email'" ;
   $r = @mysqli_query ( $link, $q ) ;
-  if ( mysqli_num_rows( $r ) != 0 ) $errors[] = 'Email address already registered. <a href="login.php">Login</a>' ;
+  if ( mysqli_num_rows( $r ) != 0 ) $errors[] = 'Email address already registered. <a href="admin_login.php">Login</a>' ;
 }
 
-# On success register user inserting into 'users' database table.
+# On success register user inserting into 'admin' database table.
 if ( empty( $errors ) ) 
 {
-  $q = "INSERT INTO users (first_name, last_name, date_birth, contact_number, country, email, pass, card_number, exp_month, exp_year, cvv, reg_date) VALUES ('$fn', '$ln', '$dob', '$contact_no', '$count', '$email', SHA2('$p',256), '$card_no', '$exp_m', '$exp_y', '$cvv', NOW() )";
+  $q = "INSERT INTO admin (first_name, last_name, email, pass,  reg_date) VALUES ('$fn', '$ln', '$email', SHA2('$p',256),  NOW() )";
   $r = @mysqli_query ( $link, $q ) ;
   if ($r)
   { echo '
     <div class="col-sm-12 col-md-4">
-    <h1>Registered!</h1><p>You are now registered with Trail access.</p><p><a href="login.php">Login</a></p>
+    <h1>Registered!</h1><p>You are now registered as Admin.</p><p><a href="admin_login.php">Login</a></p>
     <br>
     </div>' ; }
 
@@ -198,7 +128,7 @@ else
 <h1 class="pb-3">Register </h1>
 <div class="form-style">
   
-<form  action="register.php" method="post">
+<form  action="admin_register.php" method="post">
    
   <div class="form-group pb-3">   
   <input type="text" placeholder="First Name"class="form-control" id="exampleInputName" name="first_name" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name'];?>"> 
@@ -206,18 +136,6 @@ else
 
   <div class="form-group pb-3">   
   <input type="text" placeholder="Last Name" class="form-control" id="exampleInputName" name="last_name"  value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name'];?>">
-  </div>
-
-  <div class="form-group pb-3">   
-  <input type="text" placeholder="Birth Date" class="form-control" id="exampleInputName" name="date_birth"  value="<?php if (isset($_POST['dob'])) echo $_POST['dob'];?>">
-  </div>
-
-  <div class="form-group pb-3">   
-  <input type="text" placeholder="Contact Number" class="form-control" id="exampleInputName" name="contact_number"  value="<?php if (isset($_POST['contact_no'])) echo $_POST['contact_no'];?>">
-  </div>
-
-  <div class="form-group pb-3">   
-  <input type="text" placeholder="Country" class="form-control" id="exampleInputName" name="country"  value="<?php if (isset($_POST['count'])) echo $_POST['count'];?>">
   </div>
 
   <div class="form-group pb-3">   
@@ -233,29 +151,10 @@ else
   </div>
 
   <div class="sideline">  
-    The Account will be registered with Trail access!
+    The Account will be registered as Administrator!
     </div>
 
  
-  <div class="pt-4 text-center">  
-     The Card details will be save on the account and if you choose to futher access the Premium content, you can stream them by
-     subscribing for monthly or yearly plans. 
-   </div>
-<br>
-  <div class="form-group pb-3"> 
-  <input type="text" placeholder="Card Number" class="form-control" id="exampleInputCard1" name="card_number"  value="<?php if (isset($_POST['card_no'])) echo $_POST['card_no']; ?>">    
-  </div>
-
-
-  <div class="form-group pb-3"> 
-  <input type="text" placeholder=" Expiration Month" class="form-control" id="exampleInputExp1" name="exp_month" size="2" value="<?php if (isset($_POST['exp_m'])) echo $_POST['exp_m']; ?>">
-  <input type="text" placeholder=" Expiration Year" class="form-control" id="exampleInputExp1" name="exp_year" size="2" value="<?php if (isset($_POST['exp_y'])) echo $_POST['exp_y']; ?>">      
-  </div>
-
-  <div class="form-group pb-3"> 
-  <input type="text" placeholder="CVV" class="form-control" id="exampleInputCVV1" name="cvv" size="3" value="<?php if (isset($_POST['cvv'])) echo $_POST['cvv']; ?>">    
-  </div>
-
    <div class="pb-2">
   <button type="submit" class="btn btn-dark w-100 font-weight-bold mt-2"  value="Register">Submit</button>
    </div>
@@ -264,7 +163,7 @@ else
   <div class="sideline">OR</div>
  
   <div class="pt-4 text-center">
-  already have an account. <a href="login.php">Sign in</a>
+  already have an account. <a href="admin_login.php">Sign in</a>
   </div>
 </div>
 
@@ -280,6 +179,3 @@ else
 include ( 'footer.html' ) ;
 ?>
 
-
-
- 

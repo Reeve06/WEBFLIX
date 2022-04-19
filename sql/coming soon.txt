@@ -1,0 +1,21 @@
+--
+-- Table structure for table `movie`
+--
+
+CREATE TABLE IF NOT EXISTS `coming_soon` (
+  `id` int(20) NOT NULL,
+  `title` varchar(30) NOT NULL,  
+  `img` varchar(30) NOT NULL,
+  `preview` varchar(30) NOT NULL  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `movie`
+--
+
+INSERT INTO `coming_soon` (`id`, `title`, `img`) VALUES
+(1, 'Spider-Man: No Way Home', 'img/c1.jpg'),
+(2, 'The Matrix Resurrections', 'img/c2.jpg'),
+(3, 'Morbius','img/c3.jpg'),
+(4, 'Uncharted ','img/c4.jpg');
+
