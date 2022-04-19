@@ -1,0 +1,25 @@
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(20) NOT NULL,
+  `category_title` varchar(30) NOT NULL,
+  `info` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `category_title`,  `info` ) VALUES
+(1, 'Action', 'Action film is a film genre in which the protagonist is thrust into a series of events that typically involve violence and physical feats.' ),
+(2, 'Comedy', 'A comedy film is a category of film which emphasizes humor. These films are designed to make the audience laugh through amusement. ' ),
+(3, 'Science fiction', 'Science fiction is a film genre that uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science, such as extraterrestrial lifeforms, spacecraft, robots, cyborgs, interstellar travel or other technologies.' ),
+(4, 'Musical', 'Musical film is a film genre in which songs by the characters are interwoven into the narrative, sometimes accompanied by singing and dancing.' ),
+(5, 'Animation', 'Animation is a method in which figures are manipulated to appear as moving images.' ),
+(6, 'Adventure', 'An adventure film is form of adventure fiction, and is a genre of film. ' ),
+(7, 'Fantasy', 'Fantasy is a genre of speculative fiction involving magical elements, typically set in a fictional universe and sometimes inspired by mythology and folklore. ' ),
+(8, 'Mystery', 'A mystery film is a genre of film that revolves around the solution of a problem or a crime.' ),
+(9, 'Horror',  'Horror is a film genre that seeks to elicit fear or disgust in its audience for entertainment purposes. ');
+
