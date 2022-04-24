@@ -1,7 +1,7 @@
 # WEBFLIX
 Software Development Graded Unit : A web application to stream movies and tv shows.
 
-Live Demo :- 
+Live Demo :-  http://webdev.edinburghcollege.ac.uk/~HNCNETSA6/WEBFLIX/homeFree.php
 
 about Webflix: -
 
