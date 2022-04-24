@@ -91,7 +91,11 @@ mysqli_close( $link) ;
 # Or display message.
 else { echo '<p>There are currently no TV show aring.</p>' ; }
 
-echo '<br><br><br>';
+
+echo '<div class="container">
+<div>  <br><br>  </div>
+
+';
 # Display footer section.
 include ( 'footer.html' ) ;
 
