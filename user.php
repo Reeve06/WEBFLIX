@@ -28,9 +28,7 @@ $q = "SELECT * FROM users WHERE user_id={$_SESSION[user_id]}" ;
         echo '
         <div class="col-sm" >
           <div class="alert alert-dark" alert-dismissible fade show" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>	
+            
           <h1>'  . $row['first_name'] . ' '  . $row['last_name'] . '<strong>  </h1> 
           <br>
           <h5  ><strong> User ID : EC2021 '  . $row['user_id'] . ' </strong></h5>
@@ -62,10 +60,8 @@ $q = "SELECT * FROM users WHERE user_id={$_SESSION[user_id]}" ;
         echo '
 	
 		<div class="alert alert-secondary" alert-dismissible fade show" role="alert">
-		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		   </button>
-			<h1>Card Stored</h1>
+		  
+			<h1>Card </h1>
       <br>
         <h5><strong> Card Holder : </strong> '  . $row['first_name'] . '  '  . $row['last_name'] . ' </h5>
         <h5><strong> Card Number : </strong> '  . $row['card_number'] . ' </h5>
@@ -82,11 +78,9 @@ $q = "SELECT * FROM users WHERE user_id={$_SESSION[user_id]}" ;
     mysqli_close( $link ) ; 
     }
     else { echo '<div class="alert alert-danger" alert-dismissible fade show" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-                <h1>Card Stored</h1>
-                <h3>No card stored.</h3>
+          
+                <h1>Card</h1>
+                <h3>No card</h3>
             </div></div></div><br>
             
     ' ; }
