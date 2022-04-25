@@ -79,6 +79,11 @@
 
     
     echo '<br><br><br><br><br><br>';
+
+    echo '<div class="container">
+            <div>  <br><br>  </div>
+
+    ';
     # Display footer section.
     include ( 'footer.html' ) ;
 

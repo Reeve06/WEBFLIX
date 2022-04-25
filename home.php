@@ -92,13 +92,10 @@
         <div class="card-footer">
         <small class="text-muted"><a   href="movie_watch.php?id='.$row['id'].'" class="btn btn-primary" role="button" >Watch Now</a></small>
         </div>
-
-        <br> <br>
        </div>
-       <br> <br>
+   
        </div>
-       <br>
-       <br>
+     
         </div><! -- closing row --> <br>
     
        

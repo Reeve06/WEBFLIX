@@ -16,7 +16,8 @@
     <br>
 			<h1 class="text-center"> About WEBFLIX</h1>
     <hr color="#dc3545;">
-    </div>';
+    <div class="row">
+    ';
    
 # Open database connection.
 require ( 'connect_db.php' ) ;
@@ -33,10 +34,10 @@ if ( mysqli_num_rows( $r ) > 0 )
     echo '
     <br>
 
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3" justify-content-center style="max-width: 1400px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-    <img src='. $row['img'].' class="card-img-top" alt="about" > 
+    <img src='. $row['img'].' class="card-img-top" alt="about" style="max-height: 400px;" > 
     </div>
     <div class="col-md-8">
       <div class="card-body">
