@@ -54,7 +54,7 @@ if ( isset( $errors ) && !empty( $errors ) )
     <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1"  name="pass">
   </div>
   <div class="d-flex align-items-center justify-content-between">
-
+  <div><a href="admin_forget_password.php">Forget Password?</a></div>
 </div>
    <div class="pb-2">
   <button type="submit" class="btn btn-dark w-100 font-weight-bold mt-2"  value="Login">Submit</button>
