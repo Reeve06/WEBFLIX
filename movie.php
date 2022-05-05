@@ -55,7 +55,7 @@
 
 </div>
 <div class="card-footer">
-<small class="text-muted"><a   href="show_watch.php?id='.$row['id'].'" class="btn btn-primary" role="button" >Watch Now</a></small>
+<small class="text-muted"><a   href="movie_watch.php?id='.$row['id'].'" class="btn btn-primary" role="button" >Watch Now</a></small>
 </div>
 
 </div>
