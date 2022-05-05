@@ -55,15 +55,20 @@
 
     
 
-        }
-
+        }    
+        
         # Close database connection.
         mysqli_close( $link) ; 
     }
 
-    # Or display message.
-    else { echo '<p>There are currently no subscription done.</p>' ; }
-
+        else { echo '<div class="container">
+          <br>
+          <div class="alert alert-secondary" role="alert">
+          <h5 color="#FF8906">There are currently no subscription.</h5>
+          </div>
+          </div> </div>  <br>' ; }
+      
+    
  
 
     # Display footer section.

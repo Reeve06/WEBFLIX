@@ -54,8 +54,15 @@ if ( mysqli_num_rows( $r ) > 0 )
   }
 
   # Close database connection.
-  mysqli_close( $link ) ; 
+  mysqli_close( $link) ; 
 }
+
+    else { echo '<div class="container">
+      <br>
+      <div class="alert alert-secondary" role="alert">
+      <h5 color="#FF8906">There are currently no subscription done.</h5>
+      </div>
+      </div> </div>  <br>' ; }
 
 include('footer.html');
 ?>
