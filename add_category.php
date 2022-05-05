@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     require ('connect_db.php');
     # Initialize an error array.
     $errors = array();
-    # Check for a id.
+    # Check for an id.
     if (empty($_POST['id']))
     {
         $errors[] = 'Enter new id.';
