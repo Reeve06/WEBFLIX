@@ -68,16 +68,57 @@ $q = "SELECT * FROM users WHERE user_id = $user_id" ;
 		<br>
 		' ;
 		}
-	
-	# Close database connection.
-	mysqli_close( $link ) ; 
 	}
+
+	else { echo '<div class="alert alert-danger" alert-dismissible fade show" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+			<h1>uere status</h1>
+			<h3>No user to edit.</h3>
+		</div></div></div><br>
+		
+' ; }
+	
+
+# Retrieve items from 'subscription' database table.
+$q = "SELECT * FROM subscription WHERE user_id = $user_id
+ORDER BY subscription_date DESC" ;
+	$r = mysqli_query( $link, $q ) ;
+	if ( mysqli_num_rows( $r ) == 1 )
+	{
+    while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
+  {
+    echo '
+	
+
+<div class="alert alert-secondary" alert-dismissible fade show" role="alert">
+     
+        <h1>User Status</h1>
+  <br>
+    <h5  ><strong>User subscription Reference:  #EC1000' . $row['subscription_id'] . ' </strong></h5>    
+    <h5><strong>Total Paid:</strong>   &pound ' . $row['total'] . ' </h5>
+    <h5><strong>User Subscription date : </strong> '  . $row['subscription_date'] . '</h5>
+    </div>
+    <br>
+
+
+';
+  } 
+  
+  # Close database connection.
+  mysqli_close( $link ) ; 
+}
+
+
+
+
 	else { echo '<div class="alert alert-danger" alert-dismissible fade show" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
 				<h1>uere status</h1>
-				<h3>No user to edit.</h3>
+				<h3>User not Subcribed.</h3>
 			</div></div></div><br>
 			
 	' ; }
