@@ -9,8 +9,14 @@ A company in Edinburgh want to launch their new online streaming service called 
 
 Users can subscribe to the system as either a 'Basic' subscription which is free or 'Premium' subscription for a fee (£99.99/year).
 
-dev note:- log-in details to database 
+developer note:- log-in details to database 
 http://webdev.edinburghcollege.ac.uk/phpmyadmin/index.php?db=HNCNETSA6&table=about_us&target=tbl_change.php&token=81074ed48168ae1c982da7a3ab26999c
 
 username :- HNCNETSA6
 password :- rL3akpw4rG
+
+Website Hosted Through FileZilla, connection Details -
+Host:- webdev.edinburghcollege.ac.uk
+username :- HNCNETSA6
+password :- rL3akpw4rG
+Port:- 22
